@@ -19,7 +19,7 @@ function Posts() {
 
     return (
         <div>
-            <h1>Recipes</h1>
+            <h1>JSON data:</h1>
             <ul>
                 {data.map((recipe: any) => (
                     <li key={recipe.id}>
