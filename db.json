@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Spaghetti Bolognese",
+            "cuisine": "Italian",
+            "time": "30 minutes"
+        },
+        {
+            "id": 2,
+            "title": "Chicken Curry",
+            "cuisine": "Indian",
+            "time": "45 minutes"
+        }
+    ]
+}
