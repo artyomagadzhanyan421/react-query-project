@@ -1,6 +1,6 @@
 # React Query Data
 
-Learing how to implement TanStack Query (formerly known as React Query) inside of React + TypeScript + Vite application with mock JSON Server database.
+Learning how to implement TanStack Query (formerly known as React Query) inside of React + TypeScript + Vite application with mock JSON Server database.
 
 * JSON Server to store the data
 * React Query to fetch objects from the database
