@@ -38,7 +38,7 @@ const Posts = () => {
 
     return (
         <div>
-            <h1>JSON data:</h1>
+            <h1 data-testid="posts-heading-test">JSON data:</h1>
             <ul>
                 {data.map((recipe: any) => (
                     <li key={recipe.id}>
