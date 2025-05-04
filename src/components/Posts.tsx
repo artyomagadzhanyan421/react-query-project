@@ -33,8 +33,8 @@ const Posts = () => {
         },
     });
 
-    if (isLoading) return <p>Loading...</p>;
-    if (isError) return <p>Error fetching recipes.</p>;
+    if (isLoading) return <p data-testid="loading-state">Loading...</p>;
+    if (isError) return <p data-testid="error-state">Error fetching recipes.</p>;
 
     return (
         <div>
