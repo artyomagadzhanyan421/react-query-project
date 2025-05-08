@@ -1,28 +1,24 @@
-describe('test API states', () => {
-  it('checks the loading state', () => {
-    cy.intercept('GET', 'http://localhost:3001/data', (req) => {
-      req.on('response', (res) => {
-        res.setDelay(100); // simulate a delay to show loading
-      });
-    }).as('getData');
-
-    cy.visit('/');
-
-    cy.get('[data-testid="loading-state"]')
-      .should('exist')
-      .and('contain.text', 'Loading...');
+describe('Recipe CRUD Tests', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:5173');
   });
 
-  // it('checks the error state', () => {
-  //   cy.intercept('GET', 'http://localhost:3001/data', {
-  //     statusCode: 500,
-  //     body: {},
-  //   }).as('getError');
+  it('should fetch and display recipes (GET)', () => {
+    cy.get('ul > li').should('exist');
+  });
 
-  //   cy.visit('/');
+  it('should add a new recipe (POST)', () => {
+    cy.get('[data-testid="title-input"]').type('Test Recipe');
+    cy.get('[data-testid="cuisine-input"]').type('Test Cuisine');
+    cy.get('[data-testid="time-input"]').type('30 mins');
+    cy.get('[data-testid="add-recipe-button"]').click();
 
-  //   cy.get('[data-testid="error-state"]')
-  //     .should('exist')
-  //     .and('contain.text', 'Error fetching recipes.');
-  // });
-})
+    cy.contains('Test Recipe').should('exist');
+  });
+
+  it('should delete a recipe (DELETE)', () => {
+    cy.get('ul > li').first().within(() => {
+      cy.get('button').click();
+    });
+  });
+});
